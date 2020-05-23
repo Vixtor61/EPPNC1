@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de Estudiantes</title>
+</head>
+<body>
+
+<table>
+	<thead>
+	<th>ID</th>
+	<th>Nombre</th>
+		<th>Apellido</th>
+	<th>Nit</th>
+	<th>Date</th>
+		<th>Import</th>
+
+	</thead>
+	<th:block th:each="contribuyente, row: ${contribuyentes}">
+	<tr>
+		<th th:text="${contribuyente.id_contribuyente}"/>
+		<th th:text="${contribuyente.nombre}"/>
+		<th th:text="${contribuyente.apellido}"/>
+		<th th:text="${contribuyente.nit}"/>
+		<th th:text="${contribuyente.fechaDelegate}"/>
+		
+			<th th:text="${contribuyente.importancia.importancia}"/>
+
+	</tr>
+	</th:block>
+
+</table>
+
+<a href="/"> REGRESAR</a>
+</body>
+</html>
